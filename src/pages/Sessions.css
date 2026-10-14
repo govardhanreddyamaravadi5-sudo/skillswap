@@ -1,0 +1,750 @@
+/* =========================================================
+   SKILLSWAP - SESSIONS PAGE
+   ========================================================= */
+
+.sessions-page {
+  min-height: calc(100vh - 72px);
+  padding: 50px 24px 70px;
+  background: #f8fafc;
+}
+
+.sessions-container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.sessions-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 45px;
+}
+
+.sessions-eyebrow {
+  margin: 0 0 8px;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.sessions-header h1 {
+  margin: 0;
+  color: #172033;
+  font-size: 42px;
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.sessions-header > div > p:last-child {
+  margin: 12px 0 0;
+  color: #64748b;
+  font-size: 16px;
+}
+
+.schedule-session-button {
+  flex-shrink: 0;
+  border: none;
+  border-radius: 10px;
+  padding: 13px 20px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.schedule-session-button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   SESSION SECTION
+   ========================================================= */
+
+.sessions-section {
+  margin-bottom: 50px;
+}
+
+.section-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.section-title-row h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 24px;
+  font-weight: 750;
+}
+
+.section-title-row p {
+  margin: 5px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.session-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 9px;
+  border-radius: 50px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.completed-count {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+
+/* =========================================================
+   SESSION GRID
+   ========================================================= */
+
+.session-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+
+/* =========================================================
+   SESSION CARD
+   ========================================================= */
+
+.session-card {
+  padding: 25px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 5px 18px rgba(15, 23, 42, 0.05);
+  transition: all 0.2s ease;
+}
+
+.session-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.09);
+}
+
+.session-card.completed {
+  opacity: 0.9;
+}
+
+.session-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.session-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.session-card.completed .session-icon {
+  background: #f0fdf4;
+  color: #16a34a;
+}
+
+.status-badge {
+  padding: 6px 11px;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.status-badge.upcoming {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.completed-badge {
+  background: #f0fdf4;
+  color: #16a34a;
+}
+
+.session-card h3 {
+  margin: 0;
+  color: #172033;
+  font-size: 20px;
+  font-weight: 750;
+}
+
+.session-person {
+  margin: 6px 0 20px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   SESSION INFORMATION
+   ========================================================= */
+
+.session-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 0;
+  border-top: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.session-info div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #475569;
+  font-size: 13px;
+}
+
+.session-info span {
+  width: 22px;
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   SESSION ACTIONS
+   ========================================================= */
+
+.session-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.details-button,
+.meet-button {
+  flex: 1;
+  min-height: 42px;
+  border-radius: 9px;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.details-button {
+  border: 1px solid #dbe3ed;
+  background: #ffffff;
+  color: #334155;
+}
+
+.details-button:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+.meet-button {
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.meet-button:hover {
+  background: #1d4ed8;
+}
+
+.copy-link-button {
+  flex: 1;
+  min-height: 42px;
+  border-radius: 9px;
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid #16a34a;
+  background: #f0fdf4;
+  color: #16a34a;
+}
+
+.copy-link-button:hover {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+/* Meet link section in schedule form */
+.meet-link-section {
+  margin-top: 4px;
+}
+
+.meet-link-section .field-hint {
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.meet-link-row {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.meet-link-row input {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.open-calendar-button {
+  white-space: nowrap;
+  padding: 0 14px;
+  border-radius: 9px;
+  border: 1px solid #2563eb;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.open-calendar-button:hover {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.meet-link-hint {
+  font-size: 12px;
+  color: #64748b;
+  margin: 6px 0 0 0;
+  line-height: 1.5;
+  background: #f8fafc;
+  border-left: 3px solid #2563eb;
+  padding: 8px 10px;
+  border-radius: 0 6px 6px 0;
+}
+
+/* Meet link display in session details modal */
+.meet-link-display {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+}
+
+.meet-link-display strong {
+  color: #15803d;
+  white-space: nowrap;
+}
+
+.meet-link-text {
+  flex: 1;
+  font-size: 13px;
+  color: #2563eb;
+  word-break: break-all;
+}
+
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.empty-sessions {
+  padding: 55px 20px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 16px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.empty-icon {
+  margin-bottom: 12px;
+  font-size: 35px;
+}
+
+.empty-sessions h3 {
+  margin: 0 0 7px;
+  color: #172033;
+  font-size: 18px;
+}
+
+.empty-sessions p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   MODAL OVERLAY
+   ========================================================= */
+
+.session-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(15, 23, 42, 0.58);
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.session-modal {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  padding: 32px;
+
+  border-radius: 18px;
+  background: #ffffff;
+
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.2);
+
+  animation: sessionModalIn 0.2s ease;
+}
+
+@keyframes sessionModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.session-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 17px;
+
+  width: 34px;
+  height: 34px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #f1f5f9;
+  color: #475569;
+
+  font-size: 23px;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.session-modal-close:hover {
+  background: #e2e8f0;
+}
+
+.session-modal h2 {
+  margin: 0 40px 22px 0;
+  color: #172033;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   MODAL INFORMATION
+   ========================================================= */
+
+.session-modal-info {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  padding: 18px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+
+  background: #f8fafc;
+}
+
+.session-modal-info div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.session-modal-info strong {
+  color: #475569;
+  font-size: 13px;
+}
+
+.session-modal-info span {
+  color: #172033;
+  font-size: 13px;
+  font-weight: 650;
+  text-align: right;
+}
+
+
+/* =========================================================
+   MODAL BUTTONS
+   ========================================================= */
+
+.modal-action-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.modal-meet-button {
+  width: 100%;
+  border: none;
+  border-radius: 9px;
+  padding: 12px 16px;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.modal-meet-button:hover {
+  background: #1d4ed8;
+}
+
+.modal-cancel-session {
+  width: 100%;
+  border: 1px solid #fecaca;
+  border-radius: 9px;
+  padding: 11px 16px;
+
+  background: #fef2f2;
+  color: #dc2626;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.modal-cancel-session:hover {
+  background: #fee2e2;
+}
+
+.modal-close-button {
+  border: 1px solid #dbe3ed;
+  border-radius: 9px;
+  padding: 11px 16px;
+
+  background: #ffffff;
+  color: #475569;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.modal-close-button:hover {
+  background: #f8fafc;
+}
+
+.full-width {
+  width: 100%;
+  margin-top: 10px;
+}
+
+
+/* =========================================================
+   SCHEDULE FORM
+   ========================================================= */
+
+.schedule-modal {
+  max-width: 560px;
+}
+
+.schedule-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.schedule-modal label {
+  margin-top: 9px;
+
+  color: #334155;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.schedule-modal input,
+.schedule-modal select {
+  width: 100%;
+
+  padding: 12px 13px;
+
+  border: 1px solid #dbe3ed;
+  border-radius: 9px;
+
+  outline: none;
+
+  background: #ffffff;
+  color: #172033;
+
+  font-size: 14px;
+}
+
+.schedule-modal input:focus,
+.schedule-modal select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.form-row > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal-subtitle {
+  margin: -10px 0 18px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.modal-form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.modal-form-actions button {
+  flex: 1;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 850px) {
+  .session-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sessions-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .schedule-session-button {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .sessions-page {
+    padding: 30px 16px 50px;
+  }
+
+  .sessions-header h1 {
+    font-size: 32px;
+  }
+
+  .section-title-row h2 {
+    font-size: 20px;
+  }
+
+  .session-card {
+    padding: 20px;
+  }
+
+  .session-actions {
+    flex-direction: column;
+  }
+
+  .session-modal {
+    padding: 25px 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-form-actions {
+    flex-direction: column;
+  }
+}
+/* =========================================================
+   RESCHEDULE BUTTON
+   ========================================================= */
+
+.modal-reschedule-button {
+  width: 100%;
+  border: 1px solid #bfdbfe;
+  border-radius: 9px;
+  padding: 11px 16px;
+
+  background: #eff6ff;
+  color: #2563eb;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modal-reschedule-button:hover {
+  background: #dbeafe;
+  border-color: #93c5fd;
+}

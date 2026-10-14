@@ -1,0 +1,31 @@
+/* =========================================================
+   9. GENERAL PAGE
+   ========================================================= */
+
+.page-container {
+  width: min(var(--container), 92%);
+
+  margin: auto;
+
+  padding: 65px 0 100px;
+}
+
+.page-header {
+  margin-bottom: 35px;
+}
+
+.page-header h1 {
+  margin: 0 0 8px;
+
+  color: var(--dark);
+
+  font-size: 42px;
+
+  letter-spacing: -1.5px;
+}
+
+.page-header p {
+  margin: 0;
+
+  color: var(--muted);
+}

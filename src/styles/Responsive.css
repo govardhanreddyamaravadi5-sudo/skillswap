@@ -1,0 +1,332 @@
+/* =========================================================
+   15. RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .skill-users-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .home-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .home-hero-content {
+    padding-bottom: 20px;
+  }
+
+  .home-hero-visual {
+    height: 420px;
+  }
+
+  .home-benefits {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .login-container {
+    grid-template-columns: 1fr;
+
+    max-width: 600px;
+
+    gap: 30px;
+  }
+
+  .login-intro {
+    text-align: center;
+  }
+
+  .brand-mark {
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+
+  .login-intro > p:last-child {
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+}
+
+
+@media (max-width: 800px) {
+
+  .home-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-management-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-users-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-search-box {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .skill-filters {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skill-filters select {
+    width: 100%;
+
+    min-width: 0;
+  }
+
+  .request-card {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .request-actions {
+    justify-content: flex-start;
+  }
+
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .login-card {
+    padding: 26px;
+  }
+}
+
+
+@media (max-width: 700px) {
+
+  .navbar-inner {
+    height: 64px;
+  }
+
+  .navbar-user-name {
+    display: none;
+  }
+
+  .home-hero {
+    width: calc(100% - 30px);
+
+    min-height: auto;
+  }
+
+  .home-hero-content {
+    padding: 70px 0 30px;
+  }
+
+  .home-hero h1 {
+    font-size: 50px;
+
+    letter-spacing: -2.5px;
+  }
+
+  .home-description {
+    font-size: 15px;
+  }
+
+  .home-hero-visual {
+    height: 390px;
+  }
+
+  .home-benefits {
+    width: calc(100% - 30px);
+
+    padding: 80px 0;
+  }
+
+  .benefit-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit-card:last-child {
+    grid-column: auto;
+  }
+
+  .home-footer {
+    width: calc(100% - 30px);
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 25px;
+  }
+
+  .profile-form-card {
+    padding: 22px;
+  }
+
+  .profile-header h1 {
+    font-size: 34px;
+  }
+
+  .my-skills-page,
+  .requests-page,
+  .find-skills-page,
+  .profile-page,
+  .dashboard-page {
+    padding-top: 45px;
+  }
+}
+
+
+@media (max-width: 550px) {
+
+  .navbar-inner {
+    width: 94%;
+  }
+
+  .navbar-signup {
+    height: 36px;
+
+    padding: 0 12px;
+
+    font-size: 11px;
+  }
+
+  .user-dropdown {
+    right: -5px;
+
+    width: 235px;
+  }
+
+  .logo-text,
+  .navbar-logo {
+    font-size: 18px;
+  }
+
+  .home-hero h1 {
+    font-size: 44px;
+  }
+
+  .home-buttons {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .home-primary-button,
+  .home-secondary-button {
+    width: 100%;
+  }
+
+  .hero-floating-card {
+    transform: scale(0.9);
+  }
+
+  .card-one {
+    left: -15px;
+  }
+
+  .card-two {
+    right: -15px;
+  }
+
+  .hero-center-card {
+    width: 190px;
+  }
+
+  .home-hero-visual {
+    height: 350px;
+  }
+
+  .home-circle-one {
+    width: 300px;
+
+    height: 300px;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+  }
+
+  .skill-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-card-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-form-row {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .request-card {
+    padding: 17px;
+  }
+
+  .request-actions {
+    width: 100%;
+  }
+
+  .accept-button,
+  .decline-button {
+    flex: 1;
+  }
+
+  .requests-section-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .auth-card {
+    padding: 25px 20px;
+  }
+
+  .login-page {
+    padding: 35px 15px;
+  }
+
+  .login-intro h1 {
+    font-size: 40px;
+  }
+
+  .login-card {
+    padding: 22px;
+  }
+}
+
+
+@media (max-width: 450px) {
+
+  .home-hero h1 {
+    font-size: 39px;
+  }
+
+  .home-section-heading h2,
+  .benefit-text h2 {
+    font-size: 34px;
+  }
+
+  .home-cta h2 {
+    font-size: 36px;
+  }
+
+  .navbar-signup {
+    padding: 0 10px;
+  }
+
+  .user-dropdown {
+    width: 225px;
+  }
+}

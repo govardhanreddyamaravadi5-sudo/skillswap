@@ -1,0 +1,286 @@
+/* =========================================================
+   11. MY SKILLS
+   ========================================================= */
+
+.my-skills-page {
+  width: min(var(--container), 92%);
+
+  margin: 0 auto;
+
+  padding: 65px 0 100px;
+}
+
+.my-skills-header {
+  max-width: 700px;
+
+  margin-bottom: 38px;
+}
+
+.my-skills-header h1 {
+  margin: 0 0 12px;
+
+  color: var(--dark);
+
+  font-size: clamp(38px, 5vw, 52px);
+
+  line-height: 1.1;
+
+  letter-spacing: -1.8px;
+}
+
+.my-skills-header h1 span {
+  color: var(--blue);
+}
+
+.my-skills-header > p:last-child {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+.skills-management-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 24px;
+}
+
+.skill-management-card {
+  padding: 25px;
+
+  background: white;
+
+  border: 1px solid var(--border);
+
+  border-radius: 14px;
+
+  box-shadow: var(--shadow-sm);
+}
+
+.management-card-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin-bottom: 25px;
+}
+
+.management-icon {
+  width: 44px;
+
+  height: 44px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 10px;
+
+  font-size: 20px;
+}
+
+.teach-icon {
+  background: var(--blue-soft);
+}
+
+.learn-icon {
+  background: #f0fdf4;
+}
+
+.management-card-header h2 {
+  margin: 0 0 4px;
+
+  color: var(--dark);
+
+  font-size: 18px;
+}
+
+.management-card-header p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 11px;
+}
+
+
+/* FORM */
+
+.skill-add-form {
+  padding-bottom: 22px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.skill-add-form .form-group {
+  margin-bottom: 15px;
+}
+
+.skill-add-form label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: var(--dark);
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.skill-add-form input,
+.skill-add-form select {
+  width: 100%;
+
+  height: 43px;
+
+  padding: 0 12px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 8px;
+
+  outline: none;
+
+  background: white;
+
+  color: var(--dark);
+
+  font-size: 12px;
+}
+
+.skill-add-form input:focus,
+.skill-add-form select:focus {
+  border-color: var(--blue);
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.skill-form-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+}
+
+.add-skill-button {
+  width: 100%;
+
+  height: 43px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: var(--blue);
+
+  color: white;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.add-skill-button:hover {
+  background: var(--blue-dark);
+}
+
+
+/* SKILL LIST */
+
+.my-skill-list {
+  margin-top: 20px;
+}
+
+.empty-skills {
+  padding: 25px 10px;
+
+  text-align: center;
+}
+
+.empty-skills span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 25px;
+}
+
+.empty-skills p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 11px;
+}
+
+.my-skill-item {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  padding: 13px 0;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.my-skill-item:last-child {
+  border-bottom: none;
+}
+
+.my-skill-item div {
+  min-width: 0;
+}
+
+.my-skill-item strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--dark);
+
+  font-size: 13px;
+}
+
+.my-skill-item small {
+  color: var(--muted);
+
+  font-size: 10px;
+}
+
+.my-skill-item button {
+  width: 28px;
+
+  height: 28px;
+
+  flex-shrink: 0;
+
+  border: none;
+
+  border-radius: 6px;
+
+  background: #fef2f2;
+
+  color: var(--red);
+
+  font-size: 18px;
+}
+
+.my-skill-item button:hover {
+  background: #fee2e2;
+}

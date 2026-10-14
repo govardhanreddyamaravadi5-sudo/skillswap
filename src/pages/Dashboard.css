@@ -1,0 +1,174 @@
+/* =========================================================
+   8. DASHBOARD
+   ========================================================= */
+
+.dashboard-page {
+  width: min(var(--container), 92%);
+
+  margin: auto;
+
+  padding: 65px 0 100px;
+}
+
+.dashboard-header {
+  margin-bottom: 40px;
+}
+
+.dashboard-header .section-label {
+  margin-bottom: 12px;
+
+  color: var(--blue);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.dashboard-header h1 {
+  margin: 0 0 10px;
+
+  color: var(--dark);
+
+  font-size: clamp(38px, 5vw, 54px);
+
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+}
+
+.dashboard-header > p:last-child {
+  max-width: 680px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 15px;
+}
+
+.dashboard-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 20px;
+}
+
+.dashboard-card {
+  padding: 30px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 15px;
+
+  background: white;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow: var(--shadow);
+}
+
+.dashboard-icon {
+  width: 48px;
+
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 18px;
+
+  border-radius: 12px;
+
+  background: var(--blue-soft);
+
+  font-size: 21px;
+}
+
+.dashboard-card h2 {
+  margin: 0 0 7px;
+
+  color: var(--dark);
+
+  font-size: 20px;
+}
+
+.dashboard-card p {
+  margin: 0 0 18px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+.dashboard-link {
+  color: var(--blue);
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.dashboard-link:hover {
+  color: var(--blue-dark);
+}
+
+
+/* QUICK ACTIONS */
+
+.quick-section {
+  margin-top: 45px;
+}
+
+.quick-section h2 {
+  margin: 0 0 16px;
+
+  color: var(--dark);
+
+  font-size: 23px;
+}
+
+.quick-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.quick-actions a {
+  padding: 11px 16px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 8px;
+
+  background: white;
+
+  color: var(--dark);
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.quick-actions a:hover {
+  border-color: var(--blue);
+
+  color: var(--blue);
+
+  background: var(--blue-soft);
+}

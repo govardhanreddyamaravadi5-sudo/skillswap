@@ -1,0 +1,168 @@
+/* =========================================================
+   14. SKILL DETAIL / MODAL
+   ========================================================= */
+
+.skill-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(15, 23, 42, 0.45);
+
+  z-index: 2000;
+}
+
+.skill-modal {
+  position: relative;
+
+  width: min(500px, 100%);
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  padding: 28px;
+
+  background: white;
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 25px 60px rgba(15, 23, 42, 0.2);
+}
+
+.modal-close {
+  position: absolute;
+
+  top: 15px;
+
+  right: 15px;
+
+  width: 30px;
+
+  height: 30px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #f1f5f9;
+
+  color: #64748b;
+
+  font-size: 20px;
+}
+
+.modal-close:hover {
+  background: #e2e8f0;
+}
+
+.modal-user {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding-right: 35px;
+
+  margin-bottom: 22px;
+}
+
+.modal-avatar {
+  width: 52px;
+
+  height: 52px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--blue-soft);
+
+  color: var(--blue);
+
+  font-size: 18px;
+
+  font-weight: 800;
+}
+
+.modal-user h2 {
+  margin: 0 0 4px;
+
+  color: var(--dark);
+
+  font-size: 19px;
+}
+
+.modal-user p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 11px;
+}
+
+.modal-skill {
+  padding: 17px;
+
+  margin-bottom: 20px;
+
+  background: #f8fafc;
+
+  border-radius: 9px;
+}
+
+.modal-skill span {
+  color: var(--blue);
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
+
+.modal-skill h3 {
+  margin: 6px 0;
+
+  color: var(--dark);
+
+  font-size: 20px;
+}
+
+.modal-skill small {
+  color: var(--muted);
+
+  font-size: 10px;
+}
+
+.modal-section {
+  margin-bottom: 20px;
+}
+
+.modal-section h4 {
+  margin: 0 0 9px;
+
+  color: var(--dark);
+
+  font-size: 12px;
+}
+
+.modal-button {
+  width: 100%;
+
+  margin-top: 5px;
+}

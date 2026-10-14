@@ -1,0 +1,353 @@
+/* =========================================================
+   6. LOGIN PAGE
+   ========================================================= */
+
+.login-page {
+  min-height: calc(100vh - 68px);
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 60px 20px;
+
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(37, 99, 235, 0.08),
+      transparent 30%
+    ),
+    var(--background);
+}
+
+.login-container {
+  width: min(1080px, 100%);
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 450px;
+
+  gap: 70px;
+
+  align-items: center;
+}
+
+.login-intro {
+  padding: 10px;
+}
+
+.brand-mark {
+  width: 52px;
+
+  height: 52px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 24px;
+
+  border-radius: 13px;
+
+  background: var(--blue);
+
+  color: white;
+
+  font-size: 24px;
+
+  font-weight: 800;
+
+  box-shadow:
+    0 10px 25px rgba(37, 99, 235, 0.22);
+}
+
+.login-label {
+  margin: 0 0 15px;
+
+  color: var(--blue);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.login-intro h1 {
+  margin: 0 0 22px;
+
+  color: var(--dark);
+
+  font-size: clamp(40px, 5vw, 60px);
+
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+}
+
+.login-intro h1 span {
+  color: var(--blue);
+}
+
+.login-intro > p:last-child {
+  max-width: 520px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+
+/* LOGIN CARD */
+
+.login-card {
+  padding: 34px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 18px;
+
+  background: white;
+
+  box-shadow: var(--shadow-lg);
+}
+
+.login-card-header {
+  margin-bottom: 24px;
+}
+
+.login-card-header h2 {
+  margin: 0 0 7px;
+
+  color: var(--dark);
+
+  font-size: 27px;
+}
+
+.login-card-header p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 13px;
+}
+
+
+/* GOOGLE */
+
+.google-button {
+  width: 100%;
+
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 8px;
+
+  background: white;
+
+  color: var(--dark);
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.google-button:hover {
+  background: #f8fafc;
+
+  border-color: #cbd5e1;
+}
+
+.google-icon {
+  color: #4285f4;
+
+  font-size: 18px;
+
+  font-weight: 800;
+}
+
+
+/* DIVIDER */
+
+.login-divider {
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  margin: 24px 0;
+}
+
+.login-divider::before {
+  content: "";
+
+  position: absolute;
+
+  width: 100%;
+
+  height: 1px;
+
+  background: var(--border);
+}
+
+.login-divider span {
+  position: relative;
+
+  padding: 0 10px;
+
+  background: white;
+
+  color: #94a3b8;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+/* LOGIN FORM */
+
+.login-card form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.login-card label {
+  margin-top: 5px;
+
+  color: var(--dark);
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.login-card input {
+  width: 100%;
+
+  height: 47px;
+
+  padding: 0 13px;
+
+  outline: none;
+
+  border: 1px solid var(--border);
+
+  border-radius: 8px;
+
+  background: white;
+
+  color: var(--dark);
+
+  font-size: 13px;
+}
+
+.login-card input:focus {
+  border-color: var(--blue);
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.09);
+}
+
+.login-card input::placeholder {
+  color: #94a3b8;
+}
+
+
+/* PASSWORD */
+
+.password-label {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.forgot-password {
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--blue);
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+
+/* LOGIN BUTTON */
+
+.login-button {
+  width: 100%;
+
+  height: 48px;
+
+  margin-top: 10px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: var(--blue);
+
+  color: white;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.login-button:hover {
+  background: var(--blue-dark);
+
+  box-shadow:
+    0 8px 18px rgba(37, 99, 235, 0.2);
+}
+
+
+/* REGISTER TEXT */
+
+.register-text {
+  margin: 20px 0 0;
+
+  text-align: center;
+
+  color: var(--muted);
+
+  font-size: 12px;
+}
+
+.register-text a {
+  margin-left: 5px;
+
+  color: var(--blue);
+
+  font-weight: 700;
+}
