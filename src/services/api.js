@@ -1,4 +1,5 @@
-const API_BASE_URL = "http://localhost:8081/api";
+const rawApiUrl = import.meta.env.VITE_API_URL || "http://localhost:8081/api";
+const API_BASE_URL = rawApiUrl.endsWith("/api") ? rawApiUrl : `${rawApiUrl}/api`;
 
 export const authService = {
   getCurrentUser() {
