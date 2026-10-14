@@ -69,12 +69,8 @@ public class DatabaseConfig {
                 String userInfo = uri.getUserInfo();
                 if (userInfo != null && userInfo.contains(":")) {
                     String[] parts = userInfo.split(":", 2);
-                    if (!StringUtils.hasText(username)) {
-                        username = parts[0];
-                    }
-                    if (!StringUtils.hasText(password)) {
-                        password = parts[1];
-                    }
+                    username = parts[0];
+                    password = parts[1];
                 }
             } catch (Exception ignored) {}
         }
