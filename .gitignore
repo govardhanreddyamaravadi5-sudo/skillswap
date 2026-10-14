@@ -12,8 +12,13 @@ dist
 dist-ssr
 *.local
 
-# Backend — tracked in its own separate repository
-backend/
+# Backend build artifacts
+backend/target/
+backend/.apt_generated
+backend/.settings
+backend/.classpath
+backend/.project
+backend/bin/
 
 # Editor directories and files
 .vscode/*

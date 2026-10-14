@@ -1,4 +1,7 @@
-const rawApiUrl = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? "http://localhost:8081/api" : "/api");
+let rawApiUrl = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? "http://localhost:8081/api" : "/api");
+if (rawApiUrl && !rawApiUrl.startsWith("http://") && !rawApiUrl.startsWith("https://") && !rawApiUrl.startsWith("/")) {
+  rawApiUrl = `https://${rawApiUrl}`;
+}
 const API_BASE_URL = rawApiUrl.endsWith("/api") ? rawApiUrl : `${rawApiUrl}/api`;
 
 export const authService = {
