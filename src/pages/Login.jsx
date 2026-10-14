@@ -2,6 +2,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import { useGoogleAuth } from "../hooks/useGoogleAuth";
+import { authService } from "../services/api";
 import "./Login.css";
 
 function Login() {
@@ -16,49 +17,12 @@ function Login() {
     const password = e.target.password.value;
 
     try {
-      const response = await fetch(
-        "http://localhost:8081/api/auth/login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email,
-            password,
-          }),
-        }
-      );
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        alert(data.message || "Invalid email or password.");
-        return;
-      }
-
-      // Store user information returned from backend
-      localStorage.setItem(
-        "skillswapUser",
-        JSON.stringify({
-          id: data.id,
-          name: data.name,
-          email: data.email,
-          location: data.location || "India",
-          bio: data.bio || "",
-        })
-      );
-
-      // Basic frontend login state for the prototype.
-      localStorage.setItem("skillswapLoggedIn", "true");
-
+      await authService.login(email, password);
       alert("Login successful! Welcome to SkillSwap.");
       navigate("/dashboard");
     } catch (error) {
       console.error("Login error:", error);
-      alert(
-        "Cannot connect to the server. Make sure your backend is running."
-      );
+      alert(error.message || "Invalid email or password.");
     }
   };
 

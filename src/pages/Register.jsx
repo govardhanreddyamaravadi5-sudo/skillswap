@@ -2,6 +2,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import { useGoogleAuth } from "../hooks/useGoogleAuth";
+import { authService } from "../services/api";
 import "./Register.css";
 
 function Register() {
@@ -31,41 +32,11 @@ function Register() {
     setLoading(true);
 
     try {
-      const response = await fetch(
-        "http://localhost:8081/api/auth/register",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name,
-            email,
-            password,
-          }),
-        }
-      );
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(
-          data.message || "Registration failed. Please try again."
-        );
-      }
-
+      await authService.register(name, email, password);
       alert("Account created successfully!");
-
-      // Do not store the password in localStorage.
       navigate("/login");
     } catch (error) {
-      if (error instanceof TypeError) {
-        alert(
-          "Cannot connect to SkillSwap server. Make sure your backend is running."
-        );
-      } else {
-        alert(error.message);
-      }
+      alert(error.message || "Registration failed. Please try again.");
     } finally {
       setLoading(false);
     }
