@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./Myskills.css";
+import "./MySkills.css";
 import { skillsService, authService } from "../services/api";
 
 function MySkills() {
