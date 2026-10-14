@@ -3,8 +3,9 @@ services:
   - type: web
     name: skillswap-backend
     runtime: docker
-    dockerfilePath: backend/Dockerfile
-    dockerContext: backend
+    rootDir: backend
+    dockerfilePath: Dockerfile
+    dockerContext: .
     plan: free
     region: oregon
     envVars:

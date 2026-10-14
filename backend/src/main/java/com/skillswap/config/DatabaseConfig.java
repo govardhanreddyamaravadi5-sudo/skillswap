@@ -1,6 +1,7 @@
 package com.skillswap.config;
 
 import com.zaxxer.hikari.HikariDataSource;
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,27 +23,11 @@ public class DatabaseConfig {
     @Value("${spring.datasource.password:}")
     private String rawPassword;
 
-    @Bean
-    @Primary
-    public DataSource dataSource() {
+    private String getNormalizedUrl() {
         String url = rawUrl;
-        String username = rawUsername;
-        String password = rawPassword;
-
-        // Auto-convert Render / Heroku postgres:// or postgresql:// URLs to valid JDBC format
         if (StringUtils.hasText(url) && (url.startsWith("postgres://") || url.startsWith("postgresql://"))) {
             try {
                 URI uri = new URI(url);
-                String userInfo = uri.getUserInfo();
-                if (userInfo != null && userInfo.contains(":")) {
-                    String[] parts = userInfo.split(":", 2);
-                    if (!StringUtils.hasText(username)) {
-                        username = parts[0];
-                    }
-                    if (!StringUtils.hasText(password)) {
-                        password = parts[1];
-                    }
-                }
                 String host = uri.getHost();
                 int port = uri.getPort() == -1 ? 5432 : uri.getPort();
                 String path = uri.getPath();
@@ -55,10 +40,53 @@ public class DatabaseConfig {
                 }
             }
         }
+        return url;
+    }
+
+    @PostConstruct
+    public void initDialect() {
+        String url = getNormalizedUrl();
+        if (StringUtils.hasText(url)) {
+            System.setProperty("jakarta.persistence.jdbc.url", url);
+            if (url.contains("postgresql") || url.contains("postgres")) {
+                System.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
+            } else if (url.contains("mysql")) {
+                System.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
+            }
+        }
+    }
+
+    @Bean
+    @Primary
+    public DataSource dataSource() {
+        String url = getNormalizedUrl();
+        String username = rawUsername;
+        String password = rawPassword;
+
+        if (StringUtils.hasText(rawUrl) && (rawUrl.startsWith("postgres://") || rawUrl.startsWith("postgresql://"))) {
+            try {
+                URI uri = new URI(rawUrl);
+                String userInfo = uri.getUserInfo();
+                if (userInfo != null && userInfo.contains(":")) {
+                    String[] parts = userInfo.split(":", 2);
+                    if (!StringUtils.hasText(username)) {
+                        username = parts[0];
+                    }
+                    if (!StringUtils.hasText(password)) {
+                        password = parts[1];
+                    }
+                }
+            } catch (Exception ignored) {}
+        }
 
         HikariDataSource dataSource = new HikariDataSource();
         if (StringUtils.hasText(url)) {
             dataSource.setJdbcUrl(url);
+            if (url.contains("postgresql") || url.contains("postgres")) {
+                dataSource.setDriverClassName("org.postgresql.Driver");
+            } else if (url.contains("mysql")) {
+                dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+            }
         }
         if (StringUtils.hasText(username)) {
             dataSource.setUsername(username);
@@ -66,6 +94,11 @@ public class DatabaseConfig {
         if (StringUtils.hasText(password)) {
             dataSource.setPassword(password);
         }
+
+        dataSource.setConnectionTimeout(30000);
+        dataSource.setValidationTimeout(5000);
+        dataSource.setMaximumPoolSize(5);
+        dataSource.setMinimumIdle(1);
 
         return dataSource;
     }
